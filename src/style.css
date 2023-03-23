@@ -13,7 +13,6 @@ body {
 }
 
 #content {
-  /* height: 100vh; */
   display: flex;
   flex-direction: column;
 }
@@ -24,7 +23,7 @@ body {
   display: flex;
   justify-content: space-between;
   gap: 7rem;
-  /* max-width: 50vw; */
+  width: 50rem;
 }
 
 #current-picture {
@@ -140,10 +139,11 @@ body {
   justify-content: center;
   align-items: center;
   gap: 0.25rem;
+  transition: font-size 0.25s ease-in-out;
 }
 
 #forecast {
-  align-self: flex-end;
+  align-self: center;
   display: flex;
   align-items: center;
   gap: 5rem;
@@ -240,5 +240,11 @@ body {
   background-color: aliceblue;
   transition: background-color 0.5s ease-in-out, border 0.5s ease-in-out,
     border-radius 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+#current-location:hover {
+  font-size: 1.5rem;
+  transition: font-size 0.25s ease-in-out;
   cursor: pointer;
 }
