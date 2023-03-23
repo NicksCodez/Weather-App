@@ -6,6 +6,10 @@ body {
   font-family: 'Helvetica', 'Sans-Serif';
   margin: 0;
   padding: 0;
+  background-image: url('./assets/images/landscape-1844227.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 #content {
@@ -162,6 +166,8 @@ body {
   justify-items: center;
   grid-column-gap: 0.5rem;
   grid-row-gap: 0.25rem;
+  transition: background-color 0.5s ease-in-out, border 0.5s ease-in-out,
+    border-radius 0.5s ease-in-out;
 }
 
 .forecast-date {
@@ -226,4 +232,13 @@ body {
 .forecast-windSpeed-value,
 .forecast-windDir-value {
   font-size: 0.8rem;
+}
+
+.forecast-day:hover {
+  border: 0.15rem solid black;
+  border-radius: 0.5rem;
+  background-color: aliceblue;
+  transition: background-color 0.5s ease-in-out, border 0.5s ease-in-out,
+    border-radius 0.5s ease-in-out;
+  cursor: pointer;
 }
