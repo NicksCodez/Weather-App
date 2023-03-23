@@ -27,5 +27,8 @@
   },
   "prettier": {
     "singleQuote": true
+  },
+  "dependencies": {
+    "date-fns": "^2.29.3"
   }
 }
