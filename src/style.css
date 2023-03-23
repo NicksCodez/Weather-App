@@ -1,0 +1,229 @@
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-family: 'Helvetica', 'Sans-Serif';
+  margin: 0;
+  padding: 0;
+}
+
+#content {
+  /* height: 100vh; */
+  display: flex;
+  flex-direction: column;
+}
+
+#current {
+  align-self: center;
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+  gap: 7rem;
+  /* max-width: 50vw; */
+}
+
+#current-picture {
+  width: 10rem;
+}
+
+#current-weather {
+  align-self: center;
+  display: grid;
+  grid-template-columns: repeat(4, max-content);
+  grid-template-rows: 1fr 3fr repeat(4, 1fr);
+  grid-template-areas:
+    'currentText currentText picture picture'
+    'temp temp picture picture'
+    'feels feels picture picture'
+    'humIcon precIcon windIcon dirIcon'
+    'hum prec wind dir'
+    'humValue precValue windValue dirValue';
+  justify-items: center;
+  align-items: center;
+  grid-row-gap: 0.75rem;
+  grid-column-gap: 1rem;
+}
+
+#current-text {
+  grid-area: currentText;
+  align-self: flex-end;
+  font-size: 1.25rem;
+}
+
+#current-temp {
+  min-width: max-content;
+  grid-area: temp;
+  font-size: 4rem;
+}
+
+#current-feels {
+  grid-area: feels;
+  align-self: flex-start;
+  font-size: 1.2rem;
+}
+
+#current-picture {
+  grid-area: picture;
+}
+
+#current-humidity-icon {
+  grid-area: humIcon;
+}
+
+#current-humidity-title {
+  grid-area: hum;
+}
+
+#current-humidity-value {
+  grid-area: humValue;
+}
+
+#current-precipitation-icon {
+  grid-area: precIcon;
+}
+
+#current-precipitation-title {
+  grid-area: prec;
+}
+
+#current-precipitation-value {
+  grid-area: precValue;
+}
+
+#current-windSpeed-icon {
+  grid-area: windIcon;
+}
+
+#current-windSpeed-title {
+  grid-area: wind;
+}
+
+#current-windSpeed-value {
+  grid-area: windValue;
+}
+
+#current-humidity-title,
+#current-precipitation-title,
+#current-windSpeed-title,
+#current-windDir-title {
+  font-size: 1.1rem;
+}
+
+#current-details {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+#current-weekday {
+  font-size: 3rem;
+}
+
+#current-date {
+  font-size: 1.5rem;
+}
+
+#current-time {
+  font-size: 1.5rem;
+}
+
+#current-location {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+#forecast {
+  align-self: flex-end;
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+  overflow-x: auto;
+  max-width: 80vw;
+  margin-bottom: 3rem;
+}
+
+.forecast-day {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr 2fr repeat(3, 1fr);
+  grid-template-areas:
+    'date date date date'
+    'avg avg picture picture'
+    'minMax minMax forecastText forecastText'
+    'humIcon precIcon windIcon dirIcon'
+    'humValue precValue windValue dirValue';
+  align-items: center;
+  justify-items: center;
+  grid-column-gap: 0.5rem;
+  grid-row-gap: 0.25rem;
+}
+
+.forecast-date {
+  grid-area: date;
+  align-self: flex-end;
+  font-size: 1.25rem;
+}
+
+.forecast-avg {
+  grid-area: avg;
+  font-size: 2.25rem;
+}
+
+.forecast-picture {
+  grid-area: picture;
+}
+
+.forecast-minMax {
+  grid-area: minMax;
+  align-self: flex-start;
+}
+
+.forecast-text {
+  grid-area: forecastText;
+  align-self: flex-start;
+}
+
+.forecast-humidity-icon {
+  grid-area: humIcon;
+}
+
+.forecast-humidity-value {
+  grid-area: humValue;
+}
+
+.forecast-precipitation-icon {
+  grid-area: precIcon;
+}
+
+.forecast-precipitation-value {
+  grid-area: precValue;
+}
+
+.forecast-windSpeed-icon {
+  grid-area: windIcon;
+}
+
+.forecast-windSpeed-value {
+  grid-area: windValue;
+}
+
+.forecast-windDir-icon {
+  grid-area: dirIcon;
+}
+
+.forecast-windDir-value {
+  grid-area: dirValue;
+}
+
+.forecast-humidity-value,
+.forecast-precipitation-value,
+.forecast-windSpeed-value,
+.forecast-windDir-value {
+  font-size: 0.8rem;
+}
