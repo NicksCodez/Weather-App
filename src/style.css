@@ -46,7 +46,7 @@ body {
     'humValue precValue windValue dirValue';
   justify-items: center;
   align-items: center;
-  grid-row-gap: 0.75em;
+  grid-row-gap: 0.75rem;
   grid-column-gap: 1em;
 }
 
@@ -69,7 +69,8 @@ body {
   font-weight: bold;
 }
 
-.current-picture {
+.current-picture,
+.current-weather {
   grid-area: picture;
 }
 
@@ -160,7 +161,7 @@ body {
 
 #current-location {
   position: relative;
-  width: 150%;
+  width: 400%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -200,6 +201,15 @@ body {
 }
 
 #current-location:hover > .search-city {
+  pointer-events: auto;
+  opacity: 1;
+  font-size: 1.25rem;
+  transform: translateY(0.5rem);
+  transition: opacity 500ms ease-in-out, transform 500ms ease-in-out,
+    font-size 250ms ease-in-out;
+}
+
+.search-city.active {
   pointer-events: auto;
   opacity: 1;
   font-size: 1.25rem;
@@ -318,15 +328,13 @@ body.night {
   top: 110%;
   width: 60vw;
   height: 80vh;
-  /* offset-x | offset-y | blur-radius | spread-radius | color */
   box-shadow: 1rem 1rem 1rem 1rem rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(1rem);
-  /* background-color: aqua; */
   border-radius: 10rem;
   z-index: 1;
   font-size: 2rem;
   padding-right: 8rem;
-  transition: top 400ms ease-in-out;
+  transition: top 100ms ease-in-out;
 }
 
 #details-day {
@@ -417,12 +425,6 @@ body.night {
   grid-area: moonset-time;
 }
 
-.moonset-time,
-.moon,
-.moonrise-time {
-  /* padding-top: 0.5rem; */
-}
-
 #close-details {
   position: absolute;
   margin: 0;
@@ -444,7 +446,118 @@ body.night {
   text-align: center;
 }
 
-#details-hours .current-weather {
+.hourly-weather {
+  align-self: center;
+  display: grid;
+  grid-template-columns: repeat(4, max-content);
+  grid-template-rows: 1fr 1fr 3fr repeat(4, 1fr);
+  grid-template-areas:
+    'hour hour hour hour'
+    'currentText currentText picture picture'
+    'temp temp picture picture'
+    'feels feels picture picture'
+    'humIcon precIcon windIcon dirIcon'
+    'hum prec wind dir'
+    'humValue precValue windValue dirValue';
+  justify-items: center;
+  align-items: center;
+  grid-row-gap: 0.75rem;
+  grid-column-gap: 1em;
+}
+
+.hour {
+  grid-area: hour;
+  font-size: 2em;
+}
+
+.hourly-text {
+  grid-area: currentText;
+  align-self: flex-end;
+  font-size: 1.25em;
+}
+
+.hourly-temp {
+  min-width: max-content;
+  grid-area: temp;
+  font-size: 4em;
+}
+
+.hourly-feels {
+  grid-area: feels;
+  align-self: flex-start;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+.hourly-picture,
+.hourly-weather {
+  grid-area: picture;
+}
+
+.hourly-humidity-icon {
+  grid-area: humIcon;
+}
+
+.hourly-humidity-title {
+  grid-area: hum;
+}
+
+.hourly-humidity-value {
+  grid-area: humValue;
+}
+
+.hourly-precipitation-icon {
+  grid-area: precIcon;
+}
+
+.hourly-precipitation-title {
+  grid-area: prec;
+}
+
+.hourly-precipitation-value {
+  grid-area: precValue;
+}
+
+.hourly-windSpeed-icon {
+  grid-area: windIcon;
+}
+
+.hourly-windSpeed-title {
+  grid-area: wind;
+}
+
+.hourly-windSpeed-value {
+  grid-area: windValue;
+}
+
+.hourly-windDir-icon {
+  grid-area: dirIcon;
+}
+
+.hourly-windDir-title {
+  grid-area: dir;
+}
+
+.hourly-windDir-value {
+  grid-area: dirValue;
+}
+
+.hourly-humidity-title,
+.hourly-precipitation-title,
+.hourly-windSpeed-title,
+.hourly-windDir-title {
+  font-size: 1.1em;
+  font-weight: 500;
+}
+
+.hourly-humidity-value,
+.hourly-precipitation-value,
+.hourly-windSpeed-value,
+.hourly-windDir-value {
+  font-size: 1.1em;
+}
+
+#details-hours .hourly-weather {
   box-sizing: border-box;
   font-size: 0.7rem;
   padding: 0;
@@ -453,7 +566,7 @@ body.night {
   min-width: 0;
 }
 
-#details-hours .current-picture {
+#details-hours .hourly-picture {
   width: 12em;
 }
 
@@ -479,5 +592,5 @@ body.night {
 
 #details.active {
   top: 10%;
-  transition: top 400ms ease-in-out;
+  transition: top 100ms ease-in-out;
 }

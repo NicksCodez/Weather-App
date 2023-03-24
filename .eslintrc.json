@@ -12,6 +12,7 @@
   "rules": {
     "no-console": "warn",
     "quotes": ["error", "single"],
-    "no-plusplus": "off"
+    "no-plusplus": "off",
+    "no-restricted-syntax": "warn"
   }
 }
