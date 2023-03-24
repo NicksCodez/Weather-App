@@ -160,8 +160,8 @@ body {
     'date date date date'
     'avg avg picture picture'
     'minMax minMax forecastText forecastText'
-    'humIcon precIcon windIcon dirIcon'
-    'humValue precValue windValue dirValue';
+    'humIcon precIcon windIcon windIcon'
+    'humValue precValue windValue windValue';
   align-items: center;
   justify-items: center;
   grid-column-gap: 0.5rem;
@@ -219,18 +219,9 @@ body {
   grid-area: windValue;
 }
 
-.forecast-windDir-icon {
-  grid-area: dirIcon;
-}
-
-.forecast-windDir-value {
-  grid-area: dirValue;
-}
-
 .forecast-humidity-value,
 .forecast-precipitation-value,
-.forecast-windSpeed-value,
-.forecast-windDir-value {
+.forecast-windSpeed-value {
   font-size: 0.8rem;
 }
 

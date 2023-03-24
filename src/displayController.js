@@ -32,7 +32,7 @@ export default function DisplayController() {
     currentWindDir.textContent = `${currentWeather.windDir}`;
 
     currentDay.textContent = format(currentWeather.time, 'cccc');
-    currentDate.textContent = format(currentWeather.time, 'co LLLL y');
+    currentDate.textContent = format(currentWeather.time, 'do LLLL y');
     currentTime.textContent = format(currentWeather.time, 'p');
     currentLocation.textContent = `${currentWeather.city}, ${currentWeather.country}`;
   }
@@ -57,8 +57,6 @@ export default function DisplayController() {
       <div class="forecast-text"></div>
       <img src="./assets/images/icons/wind.svg" alt="wind image" class="forecast-windSpeed-icon">
       <div class="forecast-windSpeed-value"></div>
-      <img src="./assets/images/icons/compass.svg" alt="compass image" class="forecast-windDir-icon">
-      <div class="forecast-windDir-value"></div>
       <img src="./assets/images/icons/droplet.svg" alt="droplet image" class="forecast-humidity-icon">
       <div class="forecast-humidity-value"></div>
       <img src="./assets/images/icons/cloud-rain.svg" alt="cloud raining image" class="forecast-precipitation-icon">
@@ -72,7 +70,6 @@ export default function DisplayController() {
       const minMax = newDay.querySelector('.forecast-minMax');
       const ftext = newDay.querySelector('.forecast-text');
       const wind = newDay.querySelector('.forecast-windSpeed-value');
-      const dir = newDay.querySelector('.forecast-windDir-value');
       const humidity = newDay.querySelector('.forecast-humidity-value');
       const prec = newDay.querySelector('.forecast-precipitation-value');
       // console.log({
@@ -92,8 +89,8 @@ export default function DisplayController() {
 
       const imageAddress = dayData.condition.icon;
       const imageLocal = imageAddress.split('').splice(21).join('');
-
-      date.textContent = format(dayData.date, 'co LLLL y');
+      console.log(dayData.date);
+      date.textContent = format(dayData.date, 'do LLLL y');
       avg.textContent = `${dayData.avgTempC}\u00B0C`;
       picture.setAttribute('src', `./assets/images/${imageLocal}`);
       minMax.textContent = `${dayData.maxTempC}\u00B0C/${dayData.minTempC}\u00B0C`;
@@ -105,7 +102,7 @@ export default function DisplayController() {
   }
 
   async function displayMainPage(city) {
-    const data = getData(city)
+    getData(city)
       .then((response) => {
         console.log('response ', response);
         const formatData = FormatData(response);
