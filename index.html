@@ -9,23 +9,23 @@
   <body>
     <div id="content">
       <div id="current">
-        <div id="current-weather">
-          <div id="current-text">Partly Cloudy</div>
-          <div id="current-temp"> 19oC</div>
-          <div id="current-feels">Feels like 17</div>
-          <img src ="" id="current-picture"></img>
-          <img src="./assets/images/icons/droplet.svg" id="current-humidity-icon"></img>
-          <div id="current-humidity-title">Humidity</div>
-          <div id="current-humidity-value">80%</div>
-          <img src="./assets/images/icons/cloud-rain.svg" id="current-precipitation-icon"></img>
-          <div id="current-precipitation-title">Precipitation</div>
-          <div id="current-precipitation-value">0 mm</div>
-          <img src="./assets/images/icons/wind.svg" id="current-windSpeed-icon"></img>
-          <div id="current-windSpeed-title">Wind Speed</div>
-          <div id="current-windSpeed-value">4 Km/h</div>
-          <img src="./assets/images/icons/compass.svg" id="current-windDir-icon"></img>
-          <div id="current-windDir-title">Wind Direction</div>
-          <div id="current-windDir-value">W</div>
+        <div id="current-weather" class="current-weather">
+          <div id="current-text" class="current-text">Partly Cloudy</div>
+          <div id="current-temp" class="current-temp"> 19oC</div>
+          <div id="current-feels" class="current-feels">Feels like 17</div>
+          <img src ="" id="current-picture" class="current-weather"></img>
+          <img src="./assets/images/icons/droplet.svg" id="current-humidity-icon" class="current-humidity-icon"></img>
+          <div id="current-humidity-title" class="current-humidity-title">Humidity</div>
+          <div id="current-humidity-value" class="current-humidity-value">80%</div>
+          <img src="./assets/images/icons/cloud-rain.svg" id="current-precipitation-icon" class="current-precipitation-icon"></img>
+          <div id="current-precipitation-title" class="current-precipitation-title">Precipitation</div>
+          <div id="current-precipitation-value" class="current-precipitation-value">0 mm</div>
+          <img src="./assets/images/icons/wind.svg" id="current-windSpeed-icon" class="current-windSpeed-icon"></img>
+          <div id="current-windSpeed-title" class="current-windSpeed-title">Wind Speed</div>
+          <div id="current-windSpeed-value" class="current-windSpeed-value">4 Km/h</div>
+          <img src="./assets/images/icons/compass.svg" id="current-windDir-icon" class="current-windDir-icon"></img>
+          <div id="current-windDir-title" class="current-windDir-title">Wind Direction</div>
+          <div id="current-windDir-value" class="current-windDir-value">W</div>
         </div>
         <div id="current-details">
           <div id="current-weekday">Monday</div>
@@ -79,6 +79,169 @@
           <div class="forecast-precipitation-value">0mm</div>
         </div>
       </div>
+      
+    </div>
+    <div id="details">
+      <div id="details-day">
+        <div class="forecast-day">
+          <div class="forecast-date">23.03.2023</div>
+          <div class="forecast-avg">15</div>
+          <img src="./assets/images/weather/64x64/day/119.png" alt="weather-picture" class="forecast-picture">
+          <div class="forecast-minMax">19/5</div>
+          <div class="forecast-text">Sunny</div>
+          <img src="./assets/images/icons/wind.svg" alt="wind image" class="forecast-windSpeed-icon">
+          <div class="forecast-windSpeed-value">5Km/h</div>
+          <img src="./assets/images/icons/droplet.svg" alt="droplet image" class="forecast-humidity-icon">
+          <div class="forecast-humidity-value">80%</div>
+          <img src="./assets/images/icons/cloud-rain.svg" alt="cloud raining image" class="forecast-precipitation-icon">
+          <div class="forecast-precipitation-value">0mm</div>
+        </div>
+        <div class="astro">
+          <div class="astro-sun">
+            <div class="sunrise-time">07:0</div>
+            <div class="sunrise">rise</div>
+            <img src="./assets/images/icons/sun.svg" alt="sun" class="sun-picture">
+            <div class="sunset">set</div>
+            <div class="sunset-time">19:00</div>
+          </div>
+          <div class="astro-moon">
+            <div class="moonrise">rise</div>
+            <div class="moonrise-time">21:00</div>
+            <img src="./assets/images/icons/moon.svg" alt="moon" class="moon-picture">
+            <div class="moonset">set</div>
+            <div class="moonset-time">05:00</div>
+          </div>
+        </div>
+      </div>
+      <div id="details-hours">
+        <div class="current-weather">
+          <div class="current-text">Partly Cloudy</div>
+          <div class="current-temp"> 19oC</div>
+          <div class="current-feels">Feels like 17</div>
+          <img src ="./assets/images/weather/64x64/day/119.png" class="current-picture"></img>
+          <img src="./assets/images/icons/droplet.svg" class="current-humidity-icon"></img>
+          <div class="current-humidity-title">Humidity</div>
+          <div class="current-humidity-value">80%</div>
+          <img src="./assets/images/icons/cloud-rain.svg" class="current-precipitation-icon"></img>
+          <div class="current-precipitation-title">Precipitation</div>
+          <div class="current-precipitation-value">0 mm</div>
+          <img src="./assets/images/icons/wind.svg" class="current-windSpeed-icon"></img>
+          <div class="current-windSpeed-title">Wind Speed</div>
+          <div class="current-windSpeed-value">4 Km/h</div>
+          <img src="./assets/images/icons/compass.svg" class="current-windDir-icon"></img>
+          <div class="current-windDir-title">Wind Direction</div>
+          <div class="current-windDir-value">W</div>
+        </div>
+        <div class="current-weather">
+          <div class="current-text">Partly Cloudy</div>
+          <div class="current-temp"> 19oC</div>
+          <div class="current-feels">Feels like 17</div>
+          <img src ="./assets/images/weather/64x64/day/119.png" class="current-picture"></img>
+          <img src="./assets/images/icons/droplet.svg" class="current-humidity-icon"></img>
+          <div class="current-humidity-title">Humidity</div>
+          <div class="current-humidity-value">80%</div>
+          <img src="./assets/images/icons/cloud-rain.svg" class="current-precipitation-icon"></img>
+          <div class="current-precipitation-title">Precipitation</div>
+          <div class="current-precipitation-value">0 mm</div>
+          <img src="./assets/images/icons/wind.svg" class="current-windSpeed-icon"></img>
+          <div class="current-windSpeed-title">Wind Speed</div>
+          <div class="current-windSpeed-value">4 Km/h</div>
+          <img src="./assets/images/icons/compass.svg" class="current-windDir-icon"></img>
+          <div class="current-windDir-title">Wind Direction</div>
+          <div class="current-windDir-value">W</div>
+        </div>
+        <div class="current-weather">
+          <div class="current-text">Partly Cloudy</div>
+          <div class="current-temp"> 19oC</div>
+          <div class="current-feels">Feels like 17</div>
+          <img src ="./assets/images/weather/64x64/day/119.png" class="current-picture"></img>
+          <img src="./assets/images/icons/droplet.svg" class="current-humidity-icon"></img>
+          <div class="current-humidity-title">Humidity</div>
+          <div class="current-humidity-value">80%</div>
+          <img src="./assets/images/icons/cloud-rain.svg" class="current-precipitation-icon"></img>
+          <div class="current-precipitation-title">Precipitation</div>
+          <div class="current-precipitation-value">0 mm</div>
+          <img src="./assets/images/icons/wind.svg" class="current-windSpeed-icon"></img>
+          <div class="current-windSpeed-title">Wind Speed</div>
+          <div class="current-windSpeed-value">4 Km/h</div>
+          <img src="./assets/images/icons/compass.svg" class="current-windDir-icon"></img>
+          <div class="current-windDir-title">Wind Direction</div>
+          <div class="current-windDir-value">W</div>
+        </div>
+        <div class="current-weather">
+          <div class="current-text">Partly Cloudy</div>
+          <div class="current-temp"> 19oC</div>
+          <div class="current-feels">Feels like 17</div>
+          <img src ="./assets/images/weather/64x64/day/119.png" class="current-picture"></img>
+          <img src="./assets/images/icons/droplet.svg" class="current-humidity-icon"></img>
+          <div class="current-humidity-title">Humidity</div>
+          <div class="current-humidity-value">80%</div>
+          <img src="./assets/images/icons/cloud-rain.svg" class="current-precipitation-icon"></img>
+          <div class="current-precipitation-title">Precipitation</div>
+          <div class="current-precipitation-value">0 mm</div>
+          <img src="./assets/images/icons/wind.svg" class="current-windSpeed-icon"></img>
+          <div class="current-windSpeed-title">Wind Speed</div>
+          <div class="current-windSpeed-value">4 Km/h</div>
+          <img src="./assets/images/icons/compass.svg" class="current-windDir-icon"></img>
+          <div class="current-windDir-title">Wind Direction</div>
+          <div class="current-windDir-value">W</div>
+        </div>
+        <div class="current-weather">
+          <div class="current-text">Partly Cloudy</div>
+          <div class="current-temp"> 19oC</div>
+          <div class="current-feels">Feels like 17</div>
+          <img src ="./assets/images/weather/64x64/day/119.png" class="current-picture"></img>
+          <img src="./assets/images/icons/droplet.svg" class="current-humidity-icon"></img>
+          <div class="current-humidity-title">Humidity</div>
+          <div class="current-humidity-value">80%</div>
+          <img src="./assets/images/icons/cloud-rain.svg" class="current-precipitation-icon"></img>
+          <div class="current-precipitation-title">Precipitation</div>
+          <div class="current-precipitation-value">0 mm</div>
+          <img src="./assets/images/icons/wind.svg" class="current-windSpeed-icon"></img>
+          <div class="current-windSpeed-title">Wind Speed</div>
+          <div class="current-windSpeed-value">4 Km/h</div>
+          <img src="./assets/images/icons/compass.svg" class="current-windDir-icon"></img>
+          <div class="current-windDir-title">Wind Direction</div>
+          <div class="current-windDir-value">W</div>
+        </div>
+        <div class="current-weather">
+          <div class="current-text">Partly Cloudy</div>
+          <div class="current-temp"> 19oC</div>
+          <div class="current-feels">Feels like 17</div>
+          <img src ="./assets/images/weather/64x64/day/119.png" class="current-picture"></img>
+          <img src="./assets/images/icons/droplet.svg" class="current-humidity-icon"></img>
+          <div class="current-humidity-title">Humidity</div>
+          <div class="current-humidity-value">80%</div>
+          <img src="./assets/images/icons/cloud-rain.svg" class="current-precipitation-icon"></img>
+          <div class="current-precipitation-title">Precipitation</div>
+          <div class="current-precipitation-value">0 mm</div>
+          <img src="./assets/images/icons/wind.svg" class="current-windSpeed-icon"></img>
+          <div class="current-windSpeed-title">Wind Speed</div>
+          <div class="current-windSpeed-value">4 Km/h</div>
+          <img src="./assets/images/icons/compass.svg" class="current-windDir-icon"></img>
+          <div class="current-windDir-title">Wind Direction</div>
+          <div class="current-windDir-value">W</div>
+        </div>
+        <div class="current-weather">
+          <div class="current-text">Partly Cloudy</div>
+          <div class="current-temp"> 19oC</div>
+          <div class="current-feels">Feels like 17</div>
+          <img src ="./assets/images/weather/64x64/day/119.png" class="current-picture"></img>
+          <img src="./assets/images/icons/droplet.svg" class="current-humidity-icon"></img>
+          <div class="current-humidity-title">Humidity</div>
+          <div class="current-humidity-value">80%</div>
+          <img src="./assets/images/icons/cloud-rain.svg" class="current-precipitation-icon"></img>
+          <div class="current-precipitation-title">Precipitation</div>
+          <div class="current-precipitation-value">0 mm</div>
+          <img src="./assets/images/icons/wind.svg" class="current-windSpeed-icon"></img>
+          <div class="current-windSpeed-title">Wind Speed</div>
+          <div class="current-windSpeed-value">4 Km/h</div>
+          <img src="./assets/images/icons/compass.svg" class="current-windDir-icon"></img>
+          <div class="current-windDir-title">Wind Direction</div>
+          <div class="current-windDir-value">W</div>
+        </div>
+      </div>
+      <button id="close-details">x</button>
     </div>
   </body>
   <script src="bundle.js"></script>
