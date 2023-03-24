@@ -49,7 +49,7 @@ export default function DisplayController() {
     const forecast = document.getElementById('forecast');
 
     forecastWeather.forEach((day) => {
-      forecast.innerHTML += `        <div class="forecast-day">
+      forecast.innerHTML += `        <div tabindex="0" class="forecast-day">
       <div class="forecast-date"></div>
       <div class="forecast-avg"></div>
       <img src="" alt="weather-picture" class="forecast-picture">

@@ -10,9 +10,11 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  overflow-y: hidden;
 }
 
 #content {
+  position: relative;
   display: flex;
   flex-direction: column;
 }
@@ -30,7 +32,7 @@ body {
   width: 10rem;
 }
 
-#current-weather {
+.current-weather {
   align-self: center;
   display: grid;
   grid-template-columns: repeat(4, max-content);
@@ -44,73 +46,94 @@ body {
     'humValue precValue windValue dirValue';
   justify-items: center;
   align-items: center;
-  grid-row-gap: 0.75rem;
-  grid-column-gap: 1rem;
+  grid-row-gap: 0.75em;
+  grid-column-gap: 1em;
 }
 
-#current-text {
+.current-text {
   grid-area: currentText;
   align-self: flex-end;
-  font-size: 1.25rem;
+  font-size: 1.25em;
 }
 
-#current-temp {
+.current-temp {
   min-width: max-content;
   grid-area: temp;
-  font-size: 4rem;
+  font-size: 4em;
 }
 
-#current-feels {
+.current-feels {
   grid-area: feels;
   align-self: flex-start;
-  font-size: 1.2rem;
+  font-size: 1.3em;
+  font-weight: bold;
 }
 
-#current-picture {
+.current-picture {
   grid-area: picture;
 }
 
-#current-humidity-icon {
+.current-humidity-icon {
   grid-area: humIcon;
 }
 
-#current-humidity-title {
+.current-humidity-title {
   grid-area: hum;
 }
 
-#current-humidity-value {
+.current-humidity-value {
   grid-area: humValue;
 }
 
-#current-precipitation-icon {
+.current-precipitation-icon {
   grid-area: precIcon;
 }
 
-#current-precipitation-title {
+.current-precipitation-title {
   grid-area: prec;
 }
 
-#current-precipitation-value {
+.current-precipitation-value {
   grid-area: precValue;
 }
 
-#current-windSpeed-icon {
+.current-windSpeed-icon {
   grid-area: windIcon;
 }
 
-#current-windSpeed-title {
+.current-windSpeed-title {
   grid-area: wind;
 }
 
-#current-windSpeed-value {
+.current-windSpeed-value {
   grid-area: windValue;
 }
 
-#current-humidity-title,
-#current-precipitation-title,
-#current-windSpeed-title,
-#current-windDir-title {
-  font-size: 1.1rem;
+.current-windDir-icon {
+  grid-area: dirIcon;
+}
+
+.current-windDir-title {
+  grid-area: dir;
+}
+
+.current-windDir-value {
+  grid-area: dirValue;
+}
+
+.current-humidity-title,
+.current-precipitation-title,
+.current-windSpeed-title,
+.current-windDir-title {
+  font-size: 1.1em;
+  font-weight: 500;
+}
+
+.current-humidity-value,
+.current-precipitation-value,
+.current-windSpeed-value,
+.current-windDir-value {
+  font-size: 1.1em;
 }
 
 #current-details {
@@ -216,12 +239,12 @@ body {
 .forecast-date {
   grid-area: date;
   align-self: flex-end;
-  font-size: 1.25rem;
+  font-size: 1.25em;
 }
 
 .forecast-avg {
   grid-area: avg;
-  font-size: 2.25rem;
+  font-size: 2.25em;
 }
 
 .forecast-picture {
@@ -265,10 +288,10 @@ body {
 .forecast-humidity-value,
 .forecast-precipitation-value,
 .forecast-windSpeed-value {
-  font-size: 0.8rem;
+  font-size: 0.8em;
 }
 
-.forecast-day:hover {
+#forecast > .forecast-day:hover {
   border: 0.15rem solid black;
   border-radius: 0.5rem;
   background-color: aliceblue;
@@ -285,4 +308,176 @@ body {
 
 body.night {
   color: aliceblue;
+}
+
+#details {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  left: 20%;
+  top: 110%;
+  width: 60vw;
+  height: 80vh;
+  /* offset-x | offset-y | blur-radius | spread-radius | color */
+  box-shadow: 1rem 1rem 1rem 1rem rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(1rem);
+  /* background-color: aqua; */
+  border-radius: 10rem;
+  z-index: 1;
+  font-size: 2rem;
+  padding-right: 8rem;
+  transition: top 400ms ease-in-out;
+}
+
+#details-day {
+  padding: 5rem;
+  height: calc(100% - 10rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#details-day > .forecast-day {
+  max-height: 20rem;
+}
+
+.astro {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 3rem;
+  font-size: 1.5rem;
+}
+
+.astro-sun {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas:
+    'sunrise-time sun sunset-time'
+    'sunrise sun sunset';
+  justify-items: center;
+  align-items: center;
+  row-gap: 0.5rem;
+  column-gap: 0.5rem;
+}
+
+.astro-moon {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas:
+    'moonrise-time moon moonset-time'
+    'moonrise moon moonset';
+  justify-items: center;
+  align-items: center;
+  row-gap: 0.5rem;
+  column-gap: 0.5rem;
+}
+
+.sunrise-time {
+  grid-area: sunrise-time;
+}
+
+.sunrise {
+  grid-area: sunrise;
+}
+
+.sun-picture {
+  grid-area: sun;
+  width: 4rem;
+}
+
+.sunset {
+  grid-area: sunset;
+}
+
+.sunrise {
+  grid-area: sunrise;
+}
+
+.moonrise {
+  grid-area: moonrise;
+}
+
+.moonrise-time {
+  grid-area: moonrise-time;
+}
+
+.moon-picture {
+  grid-area: moon;
+  width: 4rem;
+}
+
+.moonset {
+  grid-area: moonset;
+}
+
+.moonset-time {
+  grid-area: moonset-time;
+}
+
+.moonset-time,
+.moon,
+.moonrise-time {
+  /* padding-top: 0.5rem; */
+}
+
+#close-details {
+  position: absolute;
+  margin: 0;
+  padding: 0.15rem 0.5rem;
+  font-size: 1.5rem;
+  background: transparent;
+  border: none;
+  top: 2%;
+  left: 90%;
+  cursor: pointer;
+}
+
+#details-hours {
+  align-self: center;
+  overflow-y: scroll;
+  max-height: 70vh;
+  min-width: fit-content;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+#details-hours .current-weather {
+  box-sizing: border-box;
+  font-size: 0.7rem;
+  padding: 0;
+  margin-bottom: 5rem;
+  margin-right: 1rem;
+  min-width: 0;
+}
+
+#details-hours .current-picture {
+  width: 12em;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+#details.active {
+  top: 10%;
+  transition: top 400ms ease-in-out;
 }
